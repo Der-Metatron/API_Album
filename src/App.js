@@ -29,7 +29,7 @@ function App() {
         {users.map((user, index) => {
           return (
             <li key={`users-${index}`}>
-              {user.name.first} {user.name.last} {user.gender} {user.email}
+              {user.name.first} {user.name.last}/ {user.gender}/ {user.email}
               <img src={user.picture.large} alt="" />
             </li>
           );

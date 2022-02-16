@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 function App() {
@@ -13,6 +13,9 @@ function App() {
       alert(err.message);
     }
   };
+  useEffect(() => {
+    loadData();
+  }, []);
   return (
     <div className="App">
       <button
@@ -26,7 +29,7 @@ function App() {
         {users.map((user, index) => {
           return (
             <li key={`users-${index}`}>
-              {user.name.first} {user.name.last} {user.email}
+              {user.name.first} {user.name.last} {user.gender} {user.email}
               <img src={user.picture.large} alt="" />
             </li>
           );
